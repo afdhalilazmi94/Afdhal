@@ -125,7 +125,7 @@
             margin: 0.2rem 0.2rem 0 0;
         }
 
-        /* NEW: Project Portfolio Cards */
+        /* Project Portfolio Cards */
         .project-card {
             background-color: #f3f2ee;
             border-radius: 12px;
@@ -134,22 +134,17 @@
             display: flex;
             flex-direction: column;
         }
+        
+        /* UPDATED: Image Container now handles actual backgrounds */
         .project-img {
             width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #a8a29e, #78716c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 1rem;
-            box-sizing: border-box;
+            height: 200px;
+            background-color: #d1d5db; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 1px solid #e5e7eb;
         }
-        /* If you add real images later, you can use:
-           .project-img { background-image: url('your-image.jpg'); background-size: cover; } */
         
         .project-body {
             padding: 1.5rem;
@@ -159,7 +154,7 @@
         }
         .project-body h3 {
             font-size: 1.2rem;
-            color: #c27845; /* Orange/Brown title like the image */
+            color: #c27845;
             margin: 0 0 0.8rem 0;
             font-weight: 700;
             line-height: 1.4;
@@ -298,7 +293,9 @@
             
             <!-- Project 1: RevoCommerce -->
             <div class="project-card">
-                <div class="project-img">RevoCommerce Dashboard Preview</div>
+                <!-- UPDATED: Automatically loads slide thumbnail -->
+                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1zk6rniRXAmmUJHoQ9bUSSQie9lrw8O9R/export/png');"></div>
+                
                 <div class="project-body">
                     <h3>RevoCommerce Revenue & Fulfillment Analysis</h3>
                     <p>Analyzed 125,000+ orders to isolate the operational causes of a 20% revenue drop. Validated the diagnosis with a Random Forest model that ranked Merchant fulfillment as the #1 predictor of cancelled orders (38.6% weight, 87% recall).</p>
@@ -317,7 +314,9 @@
 
             <!-- Project 2: RevoBank -->
             <div class="project-card">
-                <div class="project-img">RevoBank Segmentation Preview</div>
+                <!-- UPDATED: Automatically loads slide thumbnail -->
+                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/export/png');"></div>
+                
                 <div class="project-body">
                     <h3>RevoBank Customer Segmentation</h3>
                     <p>Cleaned card data and engineered Age and Debt-to-Income features. Built a 4-cluster K-Means segmentation on Rp456.9B in sales volume and recommended targeted actions to prioritize Dormant Earners.</p>
@@ -335,7 +334,9 @@
 
             <!-- Project 3: Revo Hospital -->
             <div class="project-card">
-                <div class="project-img">Revo Hospital Dashboard Preview</div>
+                <!-- UPDATED: Automatically loads slide thumbnail -->
+                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/export/png');"></div>
+                
                 <div class="project-body">
                     <h3>Revo Hospital Strategic Dashboard</h3>
                     <p>Built an executive Tableau dashboard for the Finance Lead to identify and increase net revenue by service line and doctor experience tier. Recommended prioritizing high-yield bed capacity for Oncology and Cardiology.</p>
