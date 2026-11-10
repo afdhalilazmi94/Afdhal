@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Afdhalil Azmi</title>
+    <!-- Imports a clean, modern font similar to the image -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #e5e3d9; /* Light beige page background */
+            color: #0f172a;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            background-color: #9d8f76; /* Taupe/Khaki header color */
+            padding: 1.5rem 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Main Education Section */
+        .section {
+            padding: 4rem 10%;
+            text-align: center;
+        }
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+        .underline {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, #8b6d51, #dcc4a9);
+            margin: 0 auto 1.5rem auto;
+            border-radius: 2px;
+        }
+        .subtitle {
+            color: #4b5563;
+            font-size: 1.1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Card Layout grid */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            text-align: left;
+        }
+
+        /* Individual Cards */
+        .card {
+            background-color: #f3f2ee; /* Off-white card background */
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03); /* Soft drop shadow */
+        }
+        .card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.4rem;
+        }
+        .card h4 {
+            margin: 0 0 1.2rem 0;
+            font-weight: 600;
+            color: #374151;
+            font-size: 1rem;
+        }
+        .date-pill {
+            display: inline-block;
+            background-color: #ffffff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #374151;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div style="font-size: 1.3rem; font-weight: 700;">Hi, There!</div>
+        <div class="nav-links">
+            <div>Home</div>
+            <div>About</div>
+            <div>Education</div>
+            <div>Work Experience</div>
+            <div>Projects</div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="section">
+        <h2>Education</h2>
+        <div class="underline"></div>
+        <div class="subtitle">Academic background and certifications.</div>
+
+        <div class="card-container">
+            <!-- Left Card -->
+            <div class="card">
+                <h3>University Syarif Hidayatullah Jakarta</h3>
+                <h4>Bachelor's Degree in Sociology</h4>
+                <div class="date-pill">🗓️ 2013 - 2018</div>
+                <p>Specialized in Social Research. Completed a thesis on the adaptation strategies of traditional merchants in embracing digital payment technologies.</p>
+                <p>GPA: 3.47/4.00</p>
+            </div>
+
+            <!-- Right Card -->
+            <div class="card">
+                <h3>RevoU</h3>
+                <h4>Full Stack Data Analytics Program</h4>
+                <div class="date-pill">🗓️ June 2025 - Sept 2025</div>
+                <p>Completed RevoU Full-stack Data Analytics program, gaining hands-on experience in statistics, SQL, Python, and Tableau through real projects to generate actionable insights.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
