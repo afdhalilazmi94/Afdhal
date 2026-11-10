@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Afdhalil Azmi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Adds FontAwesome for the Technical Skill Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -12,13 +14,14 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #e5e3d9;
-            color: #0f172a;
+            background-color: #ffffff; /* White background */
+            color: #111111; /* Black text */
         }
 
-        /* Navigation */
+        /* Navigation - Black and Orange Amazon Theme */
         header {
-            background-color: #9d8f76;
+            background-color: #000000;
+            border-bottom: 3px solid #FF9900; /* Amazon Orange accent */
             padding: 1.5rem 5rem;
             display: flex;
             justify-content: space-between;
@@ -38,22 +41,29 @@
             color: white;
             text-decoration: none;
             cursor: pointer;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #FF9900; /* Amazon Orange on hover */
         }
 
         /* Layout Structure */
         .section {
             padding: 4rem 10%;
         }
+        .bg-light {
+            background-color: #f8f9fa; /* Slight off-white for contrast sections */
+        }
         h2 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #0f172a;
+            color: #000000;
             text-align: center;
         }
         .underline {
             width: 70px;
-            height: 3px;
-            background: linear-gradient(to right, #8b6d51, #dcc4a9);
+            height: 4px;
+            background: #FF9900; /* Amazon Orange */
             margin: 0 auto 3rem auto;
             border-radius: 2px;
         }
@@ -64,11 +74,61 @@
             margin: 0 auto;
             text-align: center;
             font-size: 1.1rem;
-            color: #4b5563;
+            color: #333333;
             line-height: 1.8;
         }
 
-        /* Standard Cards Grid (Education/Experience) */
+        /* NEW: Skills Section */
+        .tech-skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin-bottom: 1rem;
+        }
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #111111;
+        }
+        .tech-item i {
+            font-size: 3.5rem;
+            color: #555555; /* Grayscale icons like the image */
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+        .tech-item:hover i {
+            color: #FF9900; /* Turns orange on hover */
+        }
+        .tech-item span {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .soft-skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .soft-pill {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #111111;
+            transition: all 0.3s;
+        }
+        .soft-pill:hover {
+            border-color: #FF9900;
+            background-color: #fff8f0;
+            color: #000000;
+        }
+
+        /* Standard Cards Grid */
         .card-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -76,34 +136,40 @@
         }
         
         .card {
-            background-color: #f3f2ee;
-            border-radius: 16px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
             padding: 2.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
         .card h3 {
             margin: 0 0 0.5rem 0;
             font-size: 1.3rem;
+            color: #000000;
         }
         .card h4 {
             margin: 0 0 1.2rem 0;
             font-weight: 600;
-            color: #374151;
+            color: #555555;
             font-size: 1rem;
         }
         .date-pill {
             display: inline-block;
-            background-color: #ffffff;
+            background-color: #000000;
             padding: 0.4rem 1.2rem;
             border-radius: 30px;
             font-size: 0.85rem;
-            color: #374151;
+            color: #ffffff;
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
         .card p, .card ul {
             font-size: 0.95rem;
-            color: #4b5563;
+            color: #444444;
             line-height: 1.7;
         }
         .card ul {
@@ -116,10 +182,11 @@
             margin-top: 1.5rem;
         }
         .tag {
-            background-color: #9d8f76;
-            color: white;
+            background-color: #FF9900;
+            color: #000000;
             padding: 0.3rem 0.8rem;
             border-radius: 4px;
+            font-weight: 700;
             font-size: 0.8rem;
             display: inline-block;
             margin: 0.2rem 0.2rem 0 0;
@@ -127,19 +194,24 @@
 
         /* Project Portfolio Cards */
         .project-card {
-            background-color: #f3f2ee;
+            background-color: #ffffff;
             border-radius: 12px;
+            border: 1px solid #e5e7eb;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        /* UPDATED: Image Container now handles actual backgrounds */
         .project-img {
             width: 100%;
             height: 200px;
-            background-color: #d1d5db; /* Fallback color */
+            background-color: #f3f4f6;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -154,14 +226,14 @@
         }
         .project-body h3 {
             font-size: 1.2rem;
-            color: #c27845;
+            color: #000000;
             margin: 0 0 0.8rem 0;
             font-weight: 700;
             line-height: 1.4;
         }
         .project-body p {
             font-size: 0.9rem;
-            color: #4b5563;
+            color: #444444;
             line-height: 1.6;
             margin: 0 0 1.2rem 0;
             flex-grow: 1;
@@ -174,27 +246,28 @@
         }
         .ptag {
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            color: #1f2937;
+            background-color: #FF9900;
+            color: #000000;
         }
-        .ptag-purple { background-color: #e9d5ff; }
-        .ptag-orange { background-color: #ffedd5; }
-        .ptag-blue { background-color: #dbeafe; }
-        .ptag-green { background-color: #dcfce3; }
+        .ptag-alt {
+            background-color: #000000;
+            color: #ffffff;
+        }
 
         .project-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #d1d5db;
+            border-top: 1px solid #e5e7eb;
             padding-top: 1rem;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         .project-footer a {
-            color: #4b5563;
+            color: #000000;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -202,7 +275,7 @@
             transition: color 0.2s;
         }
         .project-footer a:hover {
-            color: #0f172a;
+            color: #FF9900;
         }
     </style>
 </head>
@@ -213,7 +286,8 @@
         <div style="font-size: 1.3rem; font-weight: 700;">Afdhalil Azmi</div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#experience">Work Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
         </div>
@@ -225,6 +299,49 @@
         <div class="underline"></div>
         <div class="about-text">
             <p>I am a professional who values clarity, speed, and rigor, and I connect business performance to actionable insight. As a Collection Analyst at a finance company, I develop calculation models and dashboards for incentive tracking and monitor credit collection productivity, and contribute to improving employee productivity by 15% and revenue by 13%. Through this work and my RevoU Data Analyst training, I strengthened my skills in SQL, Power BI, Tableau, Python, MS Excel and spreadsheet, and learned to present insights clearly to directors and cross-department teams.</p>
+        </div>
+    </div>
+
+    <!-- NEW: Skills Section (Light Gray Background for contrast) -->
+    <div id="skills" class="section bg-light">
+        <h2>Technical Skills</h2>
+        <div class="underline"></div>
+        <div class="tech-skills-container">
+            <div class="tech-item">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </div>
+            <div class="tech-item">
+                <i class="fa-solid fa-database"></i>
+                <span>SQL</span>
+            </div>
+            <div class="tech-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Power BI</span>
+            </div>
+            <div class="tech-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Tableau</span>
+            </div>
+            <div class="tech-item">
+                <i class="fa-solid fa-file-excel"></i>
+                <span>MS Excel</span>
+            </div>
+            <div class="tech-item">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Data Modelling</span>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 5rem;">Soft Skills</h2>
+        <div class="underline"></div>
+        <div class="soft-skills-container">
+            <span class="soft-pill">Analytical Thinking</span>
+            <span class="soft-pill">Cross-Functional Collaboration</span>
+            <span class="soft-pill">Strategic Planning</span>
+            <span class="soft-pill">Stakeholder Management</span>
+            <span class="soft-pill">High Ownership</span>
+            <span class="soft-pill">Attention to Detail</span>
         </div>
     </div>
 
@@ -260,7 +377,7 @@
     </div>
 
     <!-- Education Section -->
-    <div id="education" class="section">
+    <div id="education" class="section bg-light">
         <h2>Education</h2>
         <div class="underline"></div>
         <div class="card-container">
@@ -293,60 +410,54 @@
             
             <!-- Project 1: RevoCommerce -->
             <div class="project-card">
-                <!-- UPDATED: Automatically loads slide thumbnail -->
                 <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1zk6rniRXAmmUJHoQ9bUSSQie9lrw8O9R/export/png');"></div>
-                
                 <div class="project-body">
                     <h3>RevoCommerce Revenue & Fulfillment Analysis</h3>
                     <p>Analyzed 125,000+ orders to isolate the operational causes of a 20% revenue drop. Validated the diagnosis with a Random Forest model that ranked Merchant fulfillment as the #1 predictor of cancelled orders (38.6% weight, 87% recall).</p>
                     <div class="project-tags">
-                        <span class="ptag ptag-purple">EDA</span>
-                        <span class="ptag ptag-orange">Python</span>
-                        <span class="ptag ptag-blue">Power BI</span>
-                        <span class="ptag ptag-green">Excel</span>
+                        <span class="ptag">EDA</span>
+                        <span class="ptag ptag-alt">Python</span>
+                        <span class="ptag">Power BI</span>
+                        <span class="ptag ptag-alt">Excel</span>
                     </div>
                     <div class="project-footer">
                         <a href="https://docs.google.com/presentation/d/1zk6rniRXAmmUJHoQ9bUSSQie9lrw8O9R/edit?usp=drive_link&ouid=101614581857225964481&rtpof=true&sd=true" target="_blank">View Details &rarr;</a>
-                        <a href="https://drive.google.com/file/d/1zRDUpGVyH7HAOax9OGOhTZaJnTgSn5Ag/view?usp=drive_link" target="_blank">📄 Open Slides</a>
+                        <a href="https://drive.google.com/file/d/1zRDUpGVyH7HAOax9OGOhTZaJnTgSn5Ag/view?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2: RevoBank -->
             <div class="project-card">
-                <!-- UPDATED: Automatically loads slide thumbnail -->
                 <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/export/png');"></div>
-                
                 <div class="project-body">
                     <h3>RevoBank Customer Segmentation</h3>
                     <p>Cleaned card data and engineered Age and Debt-to-Income features. Built a 4-cluster K-Means segmentation on Rp456.9B in sales volume and recommended targeted actions to prioritize Dormant Earners.</p>
                     <div class="project-tags">
-                        <span class="ptag ptag-purple">EDA</span>
-                        <span class="ptag ptag-purple">Clustering</span>
-                        <span class="ptag ptag-orange">Python</span>
+                        <span class="ptag">EDA</span>
+                        <span class="ptag ptag-alt">Clustering</span>
+                        <span class="ptag">Python</span>
                     </div>
                     <div class="project-footer">
                         <a href="https://sites.google.com/d/1wHATtd7WsXfjuWmiL26X6cteHfD7X1O6/p/1iGvUGYvnfpkMhOyyt4Q_k14ERQ9OPEX_/edit" target="_blank">View Details &rarr;</a>
-                        <a href="https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/edit?usp=drive_link" target="_blank">📄 Open Slides</a>
+                        <a href="https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 3: Revo Hospital -->
             <div class="project-card">
-                <!-- UPDATED: Automatically loads slide thumbnail -->
                 <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/export/png');"></div>
-                
                 <div class="project-body">
                     <h3>Revo Hospital Strategic Dashboard</h3>
                     <p>Built an executive Tableau dashboard for the Finance Lead to identify and increase net revenue by service line and doctor experience tier. Recommended prioritizing high-yield bed capacity for Oncology and Cardiology.</p>
                     <div class="project-tags">
-                        <span class="ptag ptag-blue">Tableau</span>
-                        <span class="ptag ptag-orange">SQL</span>
+                        <span class="ptag">Tableau</span>
+                        <span class="ptag ptag-alt">SQL</span>
                     </div>
                     <div class="project-footer">
                         <a href="https://docs.google.com/presentation/d/12SAbFdlhsjwuZINYjjG-R5E4P9UQeIqC8hQ_4HHOHtg/edit?usp=drive_link" target="_blank">View Details &rarr;</a>
-                        <a href="https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/edit?usp=drive_link" target="_blank">📄 Open Slides</a>
+                        <a href="https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
                     </div>
                 </div>
             </div>
