@@ -19,13 +19,13 @@
 
         /* Navigation */
         header {
-            background-color: #3A3A3D; /* Night Gray */
+            background-color: #3A3A3D;
             border-bottom: 3px solid #FF9900;
             padding: 1.5rem 5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -52,7 +52,7 @@
             padding: 4rem 10%;
         }
         .bg-light {
-            background-color: #D4CEBF; /* Alternating shade */
+            background-color: #D4CEBF;
         }
         h2 {
             font-size: 2.5rem;
@@ -68,7 +68,6 @@
             border-radius: 2px;
         }
         
-        /* About Text */
         .about-text {
             max-width: 900px;
             margin: 0 auto;
@@ -128,9 +127,6 @@
         .card li {
             margin-bottom: 0.5rem;
         }
-        .tags {
-            margin-top: 1.5rem;
-        }
         .tag {
             background-color: #FF9900;
             color: #FFFFFF;
@@ -142,7 +138,7 @@
             margin: 0.2rem 0.2rem 0 0;
         }
 
-        /* Project Cards */
+        /* Projects Section */
         .projects-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -215,7 +211,6 @@
             background-color: #3A3A3D;
             color: #FFFFFF;
         }
-
         .project-footer {
             display: flex;
             justify-content: space-between;
@@ -225,7 +220,7 @@
             font-size: 0.85rem;
             font-weight: 700;
         }
-        .project-footer a, .project-footer button {
+        .project-footer button, .project-footer a {
             color: #3A3A3D;
             text-decoration: none;
             background: none;
@@ -240,95 +235,9 @@
             padding: 0;
             transition: color 0.2s;
         }
-        .project-footer a:hover, .project-footer button:hover {
+        .project-footer button:hover, .project-footer a:hover {
             color: #FF9900;
         }
-
-        /* Modals / Popups */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(58, 58, 61, 0.7); 
-            backdrop-filter: blur(4px);
-        }
-        .modal-content {
-            background-color: #FFFFFF;
-            margin: 5% auto;
-            padding: 3rem;
-            border-radius: 12px;
-            width: 80%;
-            max-width: 900px;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            animation: modalFadeIn 0.3s ease-out;
-        }
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .close-modal {
-            position: absolute;
-            top: 1.5rem;
-            right: 2rem;
-            color: #5A5A5D;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        .close-modal:hover { color: #FF9900; }
-        
-        .modal-content h2 {
-            text-align: left;
-            margin-top: 0;
-            font-size: 1.8rem;
-            line-height: 1.3;
-        }
-        .modal-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .modal-section h4 {
-            color: #FF9900;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .modal-section p, .modal-section li {
-            color: #4A4A4D;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-        .modal-section ul { padding-left: 1.2rem; margin-top: 0.5rem; }
-        
-        /* Modal Info Bar */
-        .modal-info-bar {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            background-color: #E1DCD1;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #3A3A3D;
-        }
-        .info-item i { color: #FF9900; }
 
         /* Skills Section */
         .tech-skills-container {
@@ -401,245 +310,362 @@
         }
         .contact-item:hover { color: #FF9900; }
         .contact-item i { font-size: 1.8rem; color: #FF9900; }
+
+
+        /* ========================================= */
+        /* NEW PROJECT DETAIL PAGE LAYOUT            */
+        /* ========================================= */
+        .detail-page {
+            display: none; /* Hidden by default */
+            background-color: #E1DCD1;
+            min-height: 100vh;
+            padding-bottom: 5rem;
+        }
+        
+        .detail-top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 10%;
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #8c7e6c;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        .back-btn:hover { color: #3A3A3D; }
+        
+        .slides-btn {
+            background-color: #a39581;
+            color: #FFFFFF;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s;
+        }
+        .slides-btn:hover { background-color: #8c7e6c; }
+
+        .detail-layout {
+            display: flex;
+            gap: 2rem;
+            padding: 0 10%;
+            align-items: flex-start;
+        }
+        
+        /* Left Column */
+        .detail-sidebar {
+            flex: 0 0 35%;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 18px rgba(58,58,61,0.05);
+        }
+        .detail-sidebar h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #000000;
+        }
+        .detail-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: #4A4A4D;
+            font-size: 0.95rem;
+        }
+        .detail-info-item i { color: #a39581; font-size: 1.1rem; }
+        .disclaimer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #8c7e6c;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Right Column */
+        .detail-content {
+            flex: 1;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 18px rgba(58,58,61,0.05);
+        }
+        .detail-content h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #000000;
+        }
+        .detail-content h3 i { color: #a39581; }
+
+        .content-box {
+            background-color: #EBE8E0;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-box h4 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            color: #a39581;
+            font-size: 1.1rem;
+        }
+        .content-box p, .content-box li {
+            color: #3A3A3D;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        .content-box ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .detail-layout { flex-direction: column; }
+            .detail-sidebar, .detail-content { flex: 1 1 100%; width: 100%; box-sizing: border-box; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div style="font-size: 1.3rem; font-weight: 700;">Afdhalil Azmi</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <div id="about" class="section">
-        <h2>About Me</h2>
-        <div class="underline"></div>
-        <div class="about-text">
-            <p>I am a professional who values clarity, speed, and rigor, and I connect business performance to actionable insight. As a Collection Analyst at a finance company, I develop calculation models and dashboards for incentive tracking and monitor credit collection productivity, and contribute to improving employee productivity by 15% and revenue by 13%. Through this work and my RevoU Data Analyst training, I strengthened my skills in SQL, Power BI, Tableau, Python, MS Excel and spreadsheet, and learned to present insights clearly to directors and cross-department teams.</p>
-        </div>
-    </div>
-
-    <!-- Experience Section -->
-    <div id="experience" class="section bg-light">
-        <h2>Work Experience</h2>
-        <div class="underline"></div>
-        <div class="card-container">
-            <div class="card">
-                <h3>Senior Collection Analyst</h3>
-                <h4>Koperasi Sehati Makmur Abadi</h4>
-                <div class="date-pill">🗓️ Mar 2023 - Present</div>
-                <ul>
-                    <li>Directed a data analysis team to build loan-system reports and dashboards to monitor branch performance, contribute to driving a 15% increase in employee productivity and a 13% increase in revenue.</li>
-                    <li>Formulated Assignment Management Guidelines and incentive-tracking calculation models, and redesigned +100K customer segmentation within the cooperative payment system to improve operational efficiency.</li>
-                    <li>Analyzed financial data using SQL, Power BI, and Python and communicated findings to directors and cross-department teams to support faster decisions.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Collection Analyst</h3>
-                <h4>Koperasi Sehati Makmur Abadi</h4>
-                <div class="date-pill">🗓️ Apr 2019 - Mar 2023</div>
-                <ul>
-                    <li>Monitored credit collection operations and productivity metrics across 150+ branches, setting performance targets and KPIs for branch-level accountability.</li>
-                    <li>Built collection report and monitoring dashboards during the pandemic, giving management early visibility into collection trends.</li>
-                    <li>Equipped leadership with proactive data monitoring tools that helped stabilize company revenue and prevent decline during the global economic crisis.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education Section -->
-    <div id="education" class="section">
-        <h2>Education</h2>
-        <div class="underline"></div>
-        <div class="card-container">
-            <div class="card">
-                <h3>Universitas Indonesia</h3>
-                <h4>Bachelor, Faculty of Law</h4>
-                <div class="date-pill">🗓️ Jul 2012 - Feb 2018</div>
-                <p>Completed academic studies and foundational education at the Faculty of Law.</p>
-            </div>
-            <div class="card">
-                <h3>RevoU</h3>
-                <h4>Data Analyst Program</h4>
-                <div class="date-pill">🗓️ Jun 2026 - Oct 2026</div>
-                <p>Intensive training in data analysis, visualization, and machine learning through case-study projects in healthcare, e-commerce, and banking.</p>
-                <div class="tags">
-                    <span class="tag">Data Analyst Certificate</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projects Section -->
-    <div id="projects" class="section bg-light">
-        <h2>Data Projects</h2>
-        <div class="underline"></div>
+    <!-- ========================================= -->
+    <!-- MAIN PORTFOLIO VIEW                       -->
+    <!-- ========================================= -->
+    <div id="main-portfolio">
         
-        <div class="projects-wrapper">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1zk6rniRXAmmUJHoQ9bUSSQie9lrw8O9R/export/png');"></div>
-                <div class="project-body">
-                    <h3>Analyzing and Maximizing Online Business Performance of RevoCommerce</h3>
-                    <p>Analyzed 125,000+ Amazon India transactions to isolate operational bottlenecks causing a 20% revenue drop. Built a Random Forest model identifying Merchant fulfillment as the #1 predictor of cancellations, recommending a 24-hour dispatch SLA to increase profitability.</p>
-                    <div class="project-tags">
-                        <span class="ptag">EDA</span>
-                        <span class="ptag ptag-alt">Python</span>
-                        <span class="ptag">Power BI</span>
-                        <span class="ptag ptag-alt">Excel</span>
-                    </div>
-                    <div class="project-footer">
-                        <!-- Updated to trigger Modal 1 -->
-                        <button onclick="openModal('modal1')">View Details &rarr;</button>
-                        <a href="https://drive.google.com/file/d/1zRDUpGVyH7HAOax9OGOhTZaJnTgSn5Ag/view?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
-                    </div>
-                </div>
+        <!-- Header -->
+        <header>
+            <div style="font-size: 1.3rem; font-weight: 700;">Afdhalil Azmi</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
+        </header>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/export/png');"></div>
-                <div class="project-body">
-                    <h3>Analyzing and Segmenting Credit Card Portfolio of RevoBank</h3>
-                    <p>Cleaned dual datasets and engineered Age and Debt-to-Income (DTI) features. Built a 4-cluster K-Means segmentation over RFM on Rp456.9B in sales volume to separate high-debt low spenders from high-income prime targets.</p>
-                    <div class="project-tags">
-                        <span class="ptag">EDA</span>
-                        <span class="ptag ptag-alt">K-Means Clustering</span>
-                        <span class="ptag">Python</span>
-                    </div>
-                    <div class="project-footer">
-                        <!-- Updated to trigger Modal 2 -->
-                        <button onclick="openModal('modal2')">View Details &rarr;</button>
-                        <a href="https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
-                    </div>
-                </div>
+        <!-- About Section -->
+        <div id="about" class="section">
+            <h2>About Me</h2>
+            <div class="underline"></div>
+            <div class="about-text">
+                <p>I am a professional who values clarity, speed, and rigor, and I connect business performance to actionable insight. As a Collection Analyst at a finance company, I develop calculation models and dashboards for incentive tracking and monitor credit collection productivity, and contribute to improving employee productivity by 15% and revenue by 13%. Through this work and my RevoU Data Analyst training, I strengthened my skills in SQL, Power BI, Tableau, Python, MS Excel and spreadsheet, and learned to present insights clearly to directors and cross-department teams.</p>
             </div>
+        </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/export/png');"></div>
-                <div class="project-body">
-                    <h3>Revo Hospital Data Strategy Dashboard</h3>
-                    <p>Developed a strategic executive dashboard connecting central admissions and billing data to pinpoint high-yield service lines. Identified Oncology as the top driver (Rp46.9M/Adm) and highlighted the underutilization of mid-tier doctors to direct budget allocation.</p>
-                    <div class="project-tags">
-                        <span class="ptag">Tableau</span>
-                        <span class="ptag ptag-alt">Data Modeling</span>
-                        <span class="ptag">SQL</span>
-                    </div>
-                    <div class="project-footer">
-                        <!-- Updated to trigger Modal 3 -->
-                        <button onclick="openModal('modal3')">View Details &rarr;</button>
-                        <a href="https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
-                    </div>
+        <!-- Experience Section -->
+        <div id="experience" class="section bg-light">
+            <h2>Work Experience</h2>
+            <div class="underline"></div>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Senior Collection Analyst</h3>
+                    <h4>Koperasi Sehati Makmur Abadi</h4>
+                    <div class="date-pill">🗓️ Mar 2023 - Present</div>
+                    <ul>
+                        <li>Directed a data analysis team to build loan-system reports and dashboards to monitor branch performance, contribute to driving a 15% increase in employee productivity and a 13% increase in revenue.</li>
+                        <li>Formulated Assignment Management Guidelines and incentive-tracking calculation models, and redesigned +100K customer segmentation within the cooperative payment system to improve operational efficiency.</li>
+                        <li>Analyzed financial data using SQL, Power BI, and Python and communicated findings to directors and cross-department teams to support faster decisions.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Collection Analyst</h3>
+                    <h4>Koperasi Sehati Makmur Abadi</h4>
+                    <div class="date-pill">🗓️ Apr 2019 - Mar 2023</div>
+                    <ul>
+                        <li>Monitored credit collection operations and productivity metrics across 150+ branches, setting performance targets and KPIs for branch-level accountability.</li>
+                        <li>Built collection report and monitoring dashboards during the pandemic, giving management early visibility into collection trends.</li>
+                        <li>Equipped leadership with proactive data monitoring tools that helped stabilize company revenue and prevent decline during the global economic crisis.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Skills Section -->
-    <div id="skills" class="section">
-        <h2>Technical Skills</h2>
-        <div class="underline"></div>
-        <div class="tech-skills-container">
-            <div class="tech-item">
-                <i class="fa-brands fa-python"></i>
-                <span>Python</span>
-            </div>
-            <div class="tech-item">
-                <i class="fa-solid fa-database"></i>
-                <span>SQL</span>
-            </div>
-            <div class="tech-item">
-                <i class="fa-solid fa-chart-simple"></i>
-                <span>Power BI</span>
-            </div>
-            <div class="tech-item">
-                <i class="fa-solid fa-chart-pie"></i>
-                <span>Tableau</span>
-            </div>
-            <div class="tech-item">
-                <i class="fa-solid fa-file-excel"></i>
-                <span>MS Excel</span>
-            </div>
-            <div class="tech-item">
-                <i class="fa-solid fa-diagram-project"></i>
-                <span>Data Modelling</span>
+        <!-- Education Section -->
+        <div id="education" class="section">
+            <h2>Education</h2>
+            <div class="underline"></div>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Universitas Indonesia</h3>
+                    <h4>Bachelor, Faculty of Law</h4>
+                    <div class="date-pill">🗓️ Jul 2012 - Feb 2018</div>
+                    <p>Completed academic studies and foundational education at the Faculty of Law.</p>
+                </div>
+                <div class="card">
+                    <h3>RevoU</h3>
+                    <h4>Data Analyst Program</h4>
+                    <div class="date-pill">🗓️ Jun 2026 - Oct 2026</div>
+                    <p>Intensive training in data analysis, visualization, and machine learning through case-study projects in healthcare, e-commerce, and banking.</p>
+                    <div class="tags">
+                        <span class="tag">Data Analyst Certificate</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h2 style="margin-top: 5rem;">Soft Skills</h2>
-        <div class="underline"></div>
-        <div class="soft-skills-container">
-            <span class="soft-pill">Analytical Thinking</span>
-            <span class="soft-pill">Cross-Functional Collaboration</span>
-            <span class="soft-pill">Strategic Planning</span>
-            <span class="soft-pill">Stakeholder Management</span>
-            <span class="soft-pill">High Ownership</span>
-            <span class="soft-pill">Attention to Detail</span>
-        </div>
-    </div>
-
-    <!-- Contacts Footer Section -->
-    <div id="contact" class="footer-section">
-        <h2>Let's Connect</h2>
-        <div class="underline"></div>
-        <p style="font-size: 1.1rem; color: #D4CEBF;">Open for opportunities and discussions on data analytics.</p>
-        
-        <div class="contact-container">
-            <a href="mailto:afdhalilazmi94@gmail.com" class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>afdhalilazmi94@gmail.com</span>
-            </a>
-            <a href="https://wa.me/6282122274721" target="_blank" class="contact-item">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>082122274721</span>
-            </a>
-            <div class="contact-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Bekasi, Indonesia (Willing to Relocate)</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- PROJECT DETAIL MODALS (Hidden by Default) -->
-    <!-- ========================================== -->
-
-    <!-- Modal 1: RevoCommerce -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
-            <h2>Analyzing and Maximizing Online Business Performance of RevoCommerce</h2>
+        <!-- Projects Section -->
+        <div id="projects" class="section bg-light">
+            <h2>Data Projects</h2>
+            <div class="underline"></div>
             
-            <div class="modal-info-bar">
-                <div class="info-item"><i class="fa-regular fa-clock"></i> Duration: 3 Weeks</div>
-                <div class="info-item"><i class="fa-solid fa-user"></i> Team: Individual</div>
-                <div class="info-item"><i class="fa-solid fa-wrench"></i> Tools: Excel, Python, Power BI</div>
+            <div class="projects-wrapper">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1zk6rniRXAmmUJHoQ9bUSSQie9lrw8O9R/export/png');"></div>
+                    <div class="project-body">
+                        <h3>Analyzing and Maximizing Online Business Performance of RevoCommerce</h3>
+                        <p>Analyzed 125,000+ Amazon India transactions to isolate operational bottlenecks causing a 20% revenue drop. Built a Random Forest model identifying Merchant fulfillment as the #1 predictor of cancellations, recommending a 24-hour dispatch SLA to increase profitability.</p>
+                        <div class="project-tags">
+                            <span class="ptag">EDA</span>
+                            <span class="ptag ptag-alt">Python</span>
+                            <span class="ptag">Power BI</span>
+                            <span class="ptag ptag-alt">Excel</span>
+                        </div>
+                        <div class="project-footer">
+                            <button onclick="showDetail('detail-revocommerce')">View Details &rarr;</button>
+                            <a href="https://drive.google.com/file/d/1zRDUpGVyH7HAOax9OGOhTZaJnTgSn5Ag/view?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/export/png');"></div>
+                    <div class="project-body">
+                        <h3>Analyzing and Segmenting Credit Card Portfolio of RevoBank</h3>
+                        <p>Cleaned dual datasets and engineered Age and Debt-to-Income (DTI) features. Built a 4-cluster K-Means segmentation over RFM on Rp456.9B in sales volume to separate high-debt low spenders from high-income prime targets.</p>
+                        <div class="project-tags">
+                            <span class="ptag">EDA</span>
+                            <span class="ptag ptag-alt">K-Means Clustering</span>
+                            <span class="ptag">Python</span>
+                        </div>
+                        <div class="project-footer">
+                            <button onclick="showDetail('detail-revobank')">View Details &rarr;</button>
+                            <a href="https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/export/png');"></div>
+                    <div class="project-body">
+                        <h3>Revo Hospital Data Strategy Dashboard</h3>
+                        <p>Developed a strategic executive dashboard connecting central admissions and billing data to pinpoint high-yield service lines. Identified Oncology as the top driver (Rp46.9M/Adm) and highlighted the underutilization of mid-tier doctors to direct budget allocation.</p>
+                        <div class="project-tags">
+                            <span class="ptag">Tableau</span>
+                            <span class="ptag ptag-alt">Data Modeling</span>
+                            <span class="ptag">SQL</span>
+                        </div>
+                        <div class="project-footer">
+                            <button onclick="showDetail('detail-revohospital')">View Details &rarr;</button>
+                            <a href="https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/edit?usp=drive_link" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Open Slides</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="underline"></div>
+            <div class="tech-skills-container">
+                <div class="tech-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                <div class="tech-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+                <div class="tech-item"><i class="fa-solid fa-chart-simple"></i><span>Power BI</span></div>
+                <div class="tech-item"><i class="fa-solid fa-chart-pie"></i><span>Tableau</span></div>
+                <div class="tech-item"><i class="fa-solid fa-file-excel"></i><span>MS Excel</span></div>
+                <div class="tech-item"><i class="fa-solid fa-diagram-project"></i><span>Data Modelling</span></div>
             </div>
 
-            <div class="modal-grid">
-                <div class="modal-section">
+            <h2 style="margin-top: 5rem;">Soft Skills</h2>
+            <div class="underline"></div>
+            <div class="soft-skills-container">
+                <span class="soft-pill">Analytical Thinking</span>
+                <span class="soft-pill">Cross-Functional Collaboration</span>
+                <span class="soft-pill">Strategic Planning</span>
+                <span class="soft-pill">Stakeholder Management</span>
+                <span class="soft-pill">High Ownership</span>
+                <span class="soft-pill">Attention to Detail</span>
+            </div>
+        </div>
+
+        <!-- Contacts Footer -->
+        <div id="contact" class="footer-section">
+            <h2>Let's Connect</h2>
+            <div class="underline"></div>
+            <p style="font-size: 1.1rem; color: #D4CEBF;">Open for opportunities and discussions on data analytics.</p>
+            <div class="contact-container">
+                <a href="mailto:afdhalilazmi94@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i><span>afdhalilazmi94@gmail.com</span></a>
+                <a href="https://wa.me/6282122274721" target="_blank" class="contact-item"><i class="fa-brands fa-whatsapp"></i><span>082122274721</span></a>
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Bekasi, Indonesia (Willing to Relocate)</span></div>
+            </div>
+        </div>
+    </div> <!-- End Main Portfolio -->
+
+
+    <!-- ========================================= -->
+    <!-- DYNAMIC DETAIL PAGES (Hidden by Default)  -->
+    <!-- ========================================= -->
+
+    <!-- Detail View: RevoCommerce -->
+    <div id="detail-revocommerce" class="detail-page">
+        <div class="detail-top-nav">
+            <button class="back-btn" onclick="hideDetail()"><i class="fa-solid fa-arrow-left"></i> Back to Projects</button>
+            <a href="https://drive.google.com/file/d/1zRDUpGVyH7HAOax9OGOhTZaJnTgSn5Ag/view?usp=drive_link" target="_blank" class="slides-btn"><i class="fa-regular fa-share-from-square"></i> Open Slides</a>
+        </div>
+        
+        <div class="detail-layout">
+            <div class="detail-sidebar">
+                <h3>Project Details</h3>
+                <div class="detail-info-item"><i class="fa-regular fa-clock"></i> Duration: 3 Weeks</div>
+                <div class="detail-info-item"><i class="fa-solid fa-user-group"></i> Team: Individual</div>
+                <div class="detail-info-item"><i class="fa-solid fa-wrench"></i> Tools: Excel, Python, Power BI</div>
+                <div class="disclaimer">
+                    *Disclaimer: This project is part of the RevoU Data Insight Project, a case study designed to analyze customized datasets and address business challenges. It hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                </div>
+            </div>
+            
+            <div class="detail-content">
+                <h3><i class="fa-regular fa-bookmark"></i> Project Overview</h3>
+                
+                <div class="content-box">
                     <h4>Background</h4>
                     <p>RevoCommerce runs a high-volume, multi-channel B2C and B2B model on Amazon India. Q2 2022 revenue totaled ₹70.97M, but monthly revenue fell 20% from April to June. The analysis evaluated 125,000+ transactions to find the operational bottlenecks behind the drop, with a goal of increasing profitability by 25% in 30 days.</p>
                 </div>
-                <div class="modal-section">
-                    <h4>Methodology</h4>
+
+                <div class="content-box">
+                    <h4>Method</h4>
                     <ul>
                         <li><strong>Data Cleaning:</strong> Imputed 2,951 missing Amount values from average SKU pricing and removed 3,206 outliers using the IQR method.</li>
                         <li><strong>Segmentation:</strong> Segmented orders by fulfillment channel (Amazon FBA vs Merchant) and tracked the lifecycle of 6,474 'Unshipped' items.</li>
                         <li><strong>Analysis:</strong> Mapped revenue and units by category, and correlated daily Kurta AOV with store revenue. Built a Random Forest model to confirm the key drivers of failed orders.</li>
                     </ul>
                 </div>
-                <div class="modal-section">
-                    <h4>Key Results & Impact</h4>
+
+                <div class="content-box">
+                    <h4>Result</h4>
                     <ul>
                         <li><strong>Fulfillment Gap:</strong> Amazon FBA successfully completed 86.72% of orders vs 75.65% for Merchant operations. Merchant fulfillment carried a 17.67% cancellation rate.</li>
                         <li><strong>Unshipped Trap:</strong> 84.4% of 'Unshipped' orders ended up cancelled, resulting in about 5,462 lost transactions in Q2.</li>
@@ -651,33 +677,43 @@
         </div>
     </div>
 
-    <!-- Modal 2: RevoBank -->
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
-            <h2>Analyzing and Segmenting Credit Card Portfolio of RevoBank</h2>
-            
-            <div class="modal-info-bar">
-                <div class="info-item"><i class="fa-regular fa-clock"></i> Duration: 2 Weeks</div>
-                <div class="info-item"><i class="fa-solid fa-user"></i> Team: Individual</div>
-                <div class="info-item"><i class="fa-solid fa-wrench"></i> Tools: Python (Pandas, NumPy, Scikit-Learn)</div>
+    <!-- Detail View: RevoBank -->
+    <div id="detail-revobank" class="detail-page">
+        <div class="detail-top-nav">
+            <button class="back-btn" onclick="hideDetail()"><i class="fa-solid fa-arrow-left"></i> Back to Projects</button>
+            <a href="https://docs.google.com/presentation/d/1p5NDEozI-wc2r23cdr4hmd68XmsRTlmjN3NeXQKXk9w/edit?usp=drive_link" target="_blank" class="slides-btn"><i class="fa-regular fa-share-from-square"></i> Open Slides</a>
+        </div>
+        
+        <div class="detail-layout">
+            <div class="detail-sidebar">
+                <h3>Project Details</h3>
+                <div class="detail-info-item"><i class="fa-regular fa-clock"></i> Duration: 2 Weeks</div>
+                <div class="detail-info-item"><i class="fa-solid fa-user-group"></i> Team: Individual</div>
+                <div class="detail-info-item"><i class="fa-solid fa-wrench"></i> Tools: Python (Pandas, NumPy, Scikit-Learn)</div>
+                <div class="disclaimer">
+                    *Disclaimer: This project is part of the RevoU Data Insight Project, a case study designed to analyze customized datasets and address business challenges. It hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                </div>
             </div>
-
-            <div class="modal-grid">
-                <div class="modal-section">
+            
+            <div class="detail-content">
+                <h3><i class="fa-regular fa-bookmark"></i> Project Overview</h3>
+                
+                <div class="content-box">
                     <h4>Background</h4>
                     <p>RevoBank generated Rp 456.88B in credit card sales volume over the past 6 months, yielding Rp 6.85B in gross MDR fees and Rp 5.84B in net profit after absorbing fraud losses. To support the Performance Management team in increasing transaction frequency and card utilization, this analysis audits 6-month sales performance and builds unsupervised customer personas across credit risk and financial capacity.</p>
                 </div>
-                <div class="modal-section">
-                    <h4>Methodology</h4>
+
+                <div class="content-box">
+                    <h4>Method</h4>
                     <ul>
                         <li><strong>Data Cleaning:</strong> Stripped formatting anomalies from 5,599 card records, fixed brand casing, purged 31 duplicate IDs, and excluded 40 invalid/expired cards.</li>
                         <li><strong>Feature Engineering:</strong> Imputed null 6-month transaction counts and engineered User Age, a boolean Retired Flag, and Debt-to-Income (DTI) Ratio features.</li>
                         <li><strong>Modeling:</strong> Selected 4-Cluster K-Means Segmentation over traditional RFM because traditional RFM only measures past transactions and misclassifies wealthy, debt-free dormant users as "lost."</li>
                     </ul>
                 </div>
-                <div class="modal-section">
-                    <h4>Key Results & Impact</h4>
+
+                <div class="content-box">
+                    <h4>Result</h4>
                     <ul>
                         <li><strong>Demographic Risk Gap:</strong> 'Very Good' credit users drive peak volume at low DTI (0.246), while the 'Poor' credit tier spends anomalously high amounts despite a 0.302 DTI ratio.</li>
                         <li><strong>Cluster Personas:</strong> Identified Cluster 1 (Dormant Earners) as holding the highest income (102.3K) and low DTI (0.13), but generating 0.00% transaction volume.</li>
@@ -688,33 +724,43 @@
         </div>
     </div>
 
-    <!-- Modal 3: Revo Hospital -->
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
-            <h2>Revo Hospital Data Strategy Dashboard</h2>
-            
-            <div class="modal-info-bar">
-                <div class="info-item"><i class="fa-regular fa-clock"></i> Target: Finance Lead</div>
-                <div class="info-item"><i class="fa-solid fa-user"></i> Team: Individual</div>
-                <div class="info-item"><i class="fa-solid fa-wrench"></i> Tools: Tableau, SQL</div>
+    <!-- Detail View: Revo Hospital -->
+    <div id="detail-revohospital" class="detail-page">
+        <div class="detail-top-nav">
+            <button class="back-btn" onclick="hideDetail()"><i class="fa-solid fa-arrow-left"></i> Back to Projects</button>
+            <a href="https://docs.google.com/presentation/d/1QqK89ck5m3s7VPUFhS3c5w8053O-77En5-IyPYjKLHg/edit?usp=drive_link" target="_blank" class="slides-btn"><i class="fa-regular fa-share-from-square"></i> Open Slides</a>
+        </div>
+        
+        <div class="detail-layout">
+            <div class="detail-sidebar">
+                <h3>Project Details</h3>
+                <div class="detail-info-item"><i class="fa-solid fa-bullseye"></i> Target: Finance Lead</div>
+                <div class="detail-info-item"><i class="fa-solid fa-user-group"></i> Team: Individual</div>
+                <div class="detail-info-item"><i class="fa-solid fa-wrench"></i> Tools: Tableau, SQL</div>
+                <div class="disclaimer">
+                    *Disclaimer: This project is part of the RevoU Data Insight Project, a case study designed to analyze customized datasets and address business challenges. It hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                </div>
             </div>
-
-            <div class="modal-grid">
-                <div class="modal-section">
+            
+            <div class="detail-content">
+                <h3><i class="fa-regular fa-bookmark"></i> Project Overview</h3>
+                
+                <div class="content-box">
                     <h4>Background</h4>
                     <p>Faced with unclear metrics on which service lines and doctor experience tiers generate the highest net revenue and yield, Revo Hospital risked allocating budget and bed capacity to high-volume, low-margin departments. The goal was to pinpoint high-yield medical service lines and direct strategic department budgeting.</p>
                 </div>
-                <div class="modal-section">
-                    <h4>Methodology</h4>
+
+                <div class="content-box">
+                    <h4>Method</h4>
                     <ul>
                         <li><strong>Data Architecture:</strong> Built a central admissions fact table with a 1-to-1 billing connection to ensure financial data integrity and mitigate Cartesian product duplication risks.</li>
                         <li><strong>Calculations:</strong> Modeled admissions, billing, department, and doctor data, incorporating Level of Detail (LOD) expressions for department yield and YTD running totals.</li>
                         <li><strong>Visualization:</strong> Designed a strategic executive dashboard in Tableau specifically tailored for the Finance Lead to monitor real-time revenue breakdowns and doctor experience tiers.</li>
                     </ul>
                 </div>
-                <div class="modal-section">
-                    <h4>Key Results & Impact</h4>
+
+                <div class="content-box">
+                    <h4>Result</h4>
                     <ul>
                         <li><strong>Yield Identification:</strong> Successfully pinpointed Oncology (Rp46.9M per admission) and Cardiology (Rp28.8M per admission) as the highest-yield departments.</li>
                         <li><strong>Utilization Gap:</strong> Data revealed that mid-tier doctors (6-10 years of experience) were significantly underutilized compared to patient volume loads.</li>
@@ -725,26 +771,33 @@
         </div>
     </div>
 
-    <!-- Modal JavaScript Logic -->
+    <!-- JavaScript to Handle Single Page Layout Swapping -->
     <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-            // Prevent background scrolling while modal is open
-            document.body.style.overflow = "hidden"; 
+        function showDetail(projectId) {
+            // Hide the main portfolio
+            document.getElementById('main-portfolio').style.display = 'none';
+            
+            // Ensure all detail pages are hidden first
+            document.querySelectorAll('.detail-page').forEach(function(page) {
+                page.style.display = 'none';
+            });
+            
+            // Show the specific project detail page and scroll to top
+            document.getElementById(projectId).style.display = 'block';
+            window.scrollTo(0, 0);
         }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-            // Restore background scrolling
-            document.body.style.overflow = "auto"; 
-        }
-
-        // Close modal if user clicks anywhere outside of the modal content box
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
+        function hideDetail() {
+            // Hide all detail pages
+            document.querySelectorAll('.detail-page').forEach(function(page) {
+                page.style.display = 'none';
+            });
+            
+            // Show the main portfolio again
+            document.getElementById('main-portfolio').style.display = 'block';
+            
+            // Scroll smoothly back to the projects section
+            document.getElementById('projects').scrollIntoView();
         }
     </script>
 </body>
