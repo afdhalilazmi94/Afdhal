@@ -13,19 +13,19 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #E1DCD1; /* Updated to Pale Ecru */
-            color: #3A3A3D; /* Updated to Night Gray */
+            background-color: #E1DCD1;
+            color: #3A3A3D;
         }
 
         /* Navigation */
         header {
-            background-color: #3A3A3D; /* Night Gray */
+            background-color: #3A3A3D;
             border-bottom: 3px solid #FF9900;
             padding: 1.5rem 5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -38,7 +38,7 @@
             font-weight: 600;
         }
         .nav-links a {
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
             text-decoration: none;
             cursor: pointer;
             transition: color 0.2s;
@@ -52,12 +52,12 @@
             padding: 4rem 10%;
         }
         .bg-light {
-            background-color: #D4CEBF; /* Subtle darker Pale Ecru shading for alternating sections */
+            background-color: #D4CEBF;
         }
         h2 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
             text-align: center;
         }
         .underline {
@@ -86,7 +86,7 @@
         }
         
         .card {
-            background-color: #FFFFFF; /* Pure White */
+            background-color: #FFFFFF;
             border-radius: 12px;
             border: 1px solid #D4CEBF;
             padding: 2.5rem;
@@ -99,7 +99,7 @@
         .card h3 {
             margin: 0 0 0.5rem 0;
             font-size: 1.3rem;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
         }
         .card h4 {
             margin: 0 0 1.2rem 0;
@@ -109,11 +109,11 @@
         }
         .date-pill {
             display: inline-block;
-            background-color: #3A3A3D; /* Night Gray */
+            background-color: #3A3A3D;
             padding: 0.4rem 1.2rem;
             border-radius: 30px;
             font-size: 0.85rem;
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
@@ -133,7 +133,7 @@
         }
         .tag {
             background-color: #FF9900;
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
             padding: 0.3rem 0.8rem;
             border-radius: 4px;
             font-weight: 700;
@@ -152,7 +152,7 @@
 
         /* Project Portfolio Cards */
         .project-card {
-            background-color: #FFFFFF; /* Pure White */
+            background-color: #FFFFFF;
             border-radius: 12px;
             border: 1px solid #D4CEBF;
             overflow: hidden;
@@ -161,7 +161,6 @@
             flex-direction: column;
             transition: transform 0.2s, box-shadow 0.2s;
             
-            /* Sizing constraints to enforce 2 on top, 1 centered on bottom */
             flex: 1 1 400px;
             max-width: calc(50% - 1.25rem);
         }
@@ -170,7 +169,6 @@
             box-shadow: 0 12px 30px rgba(58,58,61,0.1);
         }
         
-        /* Mobile responsiveness: stack all cards to 100% width on small screens */
         @media (max-width: 850px) {
             .project-card {
                 max-width: 100%;
@@ -180,7 +178,7 @@
         .project-img {
             width: 100%;
             height: 200px;
-            background-color: #E1DCD1; /* Pale Ecru image fallback background */
+            background-color: #E1DCD1;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -195,7 +193,7 @@
         }
         .project-body h3 {
             font-size: 1.2rem;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
             margin: 0 0 0.8rem 0;
             font-weight: 700;
             line-height: 1.4;
@@ -219,11 +217,11 @@
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             background-color: #FF9900;
-            color: #FFFFFF; /* Pure White */
+            color: #FFFFFF;
         }
         .ptag-alt {
-            background-color: #3A3A3D; /* Night Gray */
-            color: #FFFFFF; /* Pure White */
+            background-color: #3A3A3D;
+            color: #FFFFFF;
         }
 
         .project-footer {
@@ -236,7 +234,7 @@
             font-weight: 700;
         }
         .project-footer a {
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -259,7 +257,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
         }
         .tech-item i {
             font-size: 3.5rem;
@@ -282,19 +280,53 @@
             gap: 1rem;
         }
         .soft-pill {
-            background-color: #FFFFFF; /* Pure White */
+            background-color: #FFFFFF;
             border: 1px solid #D4CEBF;
             padding: 0.6rem 1.5rem;
             border-radius: 30px;
             font-weight: 600;
             font-size: 0.95rem;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
             transition: all 0.3s;
         }
         .soft-pill:hover {
             border-color: #FF9900;
             background-color: #fff8f0;
-            color: #3A3A3D; /* Night Gray */
+            color: #3A3A3D;
+        }
+
+        /* Contacts Footer Section */
+        .footer-section {
+            background-color: #3A3A3D;
+            color: #FFFFFF;
+            padding: 4rem 10%;
+            text-align: center;
+        }
+        .footer-section h2 {
+            color: #FFFFFF;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-item:hover {
+            color: #FF9900;
+        }
+        .contact-item i {
+            font-size: 1.8rem;
+            color: #FF9900;
         }
     </style>
 </head>
@@ -309,6 +341,7 @@
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
     </header>
 
@@ -482,6 +515,30 @@
             <span class="soft-pill">Stakeholder Management</span>
             <span class="soft-pill">High Ownership</span>
             <span class="soft-pill">Attention to Detail</span>
+        </div>
+    </div>
+
+    <!-- Contacts Footer Section -->
+    <div id="contact" class="footer-section">
+        <h2>Let's Connect</h2>
+        <div class="underline"></div>
+        <p style="font-size: 1.1rem; color: #D4CEBF;">Open for opportunities and discussions on data analytics.</p>
+        
+        <div class="contact-container">
+            <a href="mailto:afdhalilazmi94@gmail.com" class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>afdhalilazmi94@gmail.com</span>
+            </a>
+            
+            <a href="https://wa.me/6282122274721" target="_blank" class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>082122274721</span>
+            </a>
+            
+            <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bekasi, Indonesia (Willing to Relocate)</span>
+            </div>
         </div>
     </div>
 
