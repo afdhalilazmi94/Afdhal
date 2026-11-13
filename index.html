@@ -7,9 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Global Reset to fix mobile horizontal scroll and empty space */
+        * {
+            box-sizing: border-box;
+        }
+
         /* Theme Variables */
         :root {
-            /* Soft Dawn Light Theme (Eye-friendly morning mist -> muted blush -> Pale Ecru) */
+            /* Soft Dawn Light Theme */
             --bg-main: linear-gradient(135deg, #E8F0F2 0%, #F4EAE6 35%, #EAE0D5 70%, #E1DCD1 100%);
             --text-primary: #3A3A3D;
             --text-secondary: #5A5A5D;
@@ -44,8 +49,10 @@
             --icon-color: #FF9900;
         }
 
-        html {
+        html, body {
             scroll-behavior: smooth;
+            max-width: 100vw;
+            overflow-x: hidden; /* Prevents background cutoff on mobile */
         }
         
         body {
@@ -57,7 +64,7 @@
             transition: background 0.5s ease, color 0.3s ease;
         }
 
-        /* Pure CSS Starry Night Overlay (Only visible in dark mode) */
+        /* Pure CSS Starry Night Overlay */
         body.dark-mode {
             background-image: 
                 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
@@ -69,28 +76,57 @@
             background-attachment: fixed;
         }
 
-        /* Navigation */
+        /* Updated Mobile-Responsive Navigation */
         header {
             background-color: var(--header-bg);
             border-bottom: 3px solid var(--accent);
-            padding: 1.5rem 5rem;
+            padding: 1rem 5%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             color: var(--header-text);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             transition: background-color 0.3s ease;
+            width: 100%;
         }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.3rem; 
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-wrapper {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            overflow-x: auto; /* Enables sideways scrolling */
+            scrollbar-width: none; /* Firefox */
+            -webkit-overflow-scrolling: touch;
+            margin: 0 1.5rem;
+        }
+        .nav-wrapper::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             font-size: 0.95rem;
             font-weight: 600;
+            white-space: nowrap; /* Prevents links from stacking and causing empty space */
         }
+
         .nav-links a {
             color: var(--header-text);
             text-decoration: none;
@@ -100,6 +136,7 @@
         .nav-links a:hover {
             color: var(--accent);
         }
+        
         .theme-toggle {
             background: none;
             border: none;
@@ -107,10 +144,36 @@
             font-size: 1.3rem;
             cursor: pointer;
             transition: color 0.3s, transform 0.3s;
+            padding: 0;
         }
         .theme-toggle:hover {
             color: var(--accent);
             transform: scale(1.1);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+                padding: 1rem 5%;
+            }
+            .header-top {
+                justify-content: space-between;
+                width: 100%;
+            }
+            .nav-wrapper {
+                margin: 0;
+                justify-content: flex-start;
+                padding-bottom: 0.5rem; /* Space for the scroll area */
+            }
+            .nav-links {
+                gap: 1.5rem;
+            }
+            .section {
+                padding: 3rem 5%; /* Tightens gap on mobile */
+            }
         }
 
         /* Layout Structure */
@@ -146,7 +209,7 @@
         /* Standard Cards Grid */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
         
@@ -228,7 +291,7 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
         @media (max-width: 850px) {
-            .project-card { max-width: 100%; }
+            .project-card { max-width: 100%; flex-basis: 100%; }
         }
         .project-img {
             width: 100%;
@@ -353,7 +416,7 @@
         .footer-section {
             background-color: var(--header-bg);
             color: var(--header-text);
-            padding: 4rem 10%;
+            padding: 4rem 5%;
             text-align: center;
             transition: background-color 0.3s;
         }
@@ -393,6 +456,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 2rem 10%;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         .back-btn {
             background: none;
@@ -406,6 +471,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: color 0.2s;
+            padding: 0;
         }
         .back-btn:hover { color: var(--text-primary); }
         
@@ -501,6 +567,7 @@
         @media (max-width: 900px) {
             .detail-layout { flex-direction: column; }
             .detail-sidebar, .detail-content { flex: 1 1 100%; width: 100%; box-sizing: border-box; }
+            .detail-top-nav { padding: 2rem 5%; }
         }
     </style>
 </head>
@@ -513,16 +580,24 @@
         
         <!-- Header -->
         <header>
-            <div style="font-size: 1.3rem; font-weight: 700;">Afdhalil Azmi</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-                <!-- Dark/Light Mode Toggle Button -->
+            <div class="header-top">
+                <div class="logo">Afdhalil Azmi</div>
+                <!-- Theme toggle isolated for mobile structure -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
                     <i class="fa-solid fa-sun"></i>
                 </button>
+            </div>
+            
+            <div class="nav-wrapper">
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <!-- Explicitly Added Skills Link -->
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </header>
 
